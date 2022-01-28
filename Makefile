@@ -13,4 +13,9 @@ lint-code:
 	bundle exec rubocop
 	bundle exec slim-lint app/views/
 
+ci-setup:
+	yarn install
+	bundle install --without production development
+	RAILS_ENV=test bin/rails db:prepare
+
 .PHONY: test
