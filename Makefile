@@ -10,6 +10,7 @@ test:
 lint: lint-code
 
 lint-code:
+	bundle exec rubocop
 	bundle exec slim-lint app/views/
 
 .PHONY: test
