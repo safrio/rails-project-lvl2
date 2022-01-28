@@ -7,4 +7,9 @@ start:
 test:
 	bundle exec rails test
 
+lint: lint-code
+
+lint-code:
+	bundle exec slim-lint app/views/
+
 .PHONY: test
