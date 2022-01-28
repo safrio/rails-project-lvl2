@@ -65,3 +65,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'flash_rails_messages'
 gem 'rollbar'
+gem 'slim-rails'
