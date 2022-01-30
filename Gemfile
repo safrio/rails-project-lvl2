@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'faker'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'slim_lint'
@@ -65,4 +66,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise'
 gem 'flash_rails_messages'
 gem 'rollbar'
+gem 'simple_form'
 gem 'slim-rails'
