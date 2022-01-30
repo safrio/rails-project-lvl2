@@ -16,6 +16,6 @@ lint-code:
 ci-setup:
 	yarn install
 	bundle install --without production development
-	RAILS_ENV=test bin/rails db:prepare assets:precompile
+	RAILS_ENV=test bin/rails db:prepare db:migrate assets:precompile
 
 .PHONY: test
