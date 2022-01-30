@@ -1,0 +1,6 @@
+h1 = t('.title')
+
+- @posts.each do |post|
+  .card.mb-3
+    .card-header = link_to post.title, post
+    .card-body.card-text = post.text.truncate_words(18)
