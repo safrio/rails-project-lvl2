@@ -88,6 +88,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.10.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.5)
     flash_rails_messages (2.3.0)
       rails (>= 5.2)
@@ -209,6 +211,9 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -269,6 +274,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  faker
   flash_rails_messages
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -282,6 +288,7 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver
+  simple_form
   slim-rails
   slim_lint
   spring
