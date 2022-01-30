@@ -1,2 +1,16 @@
 en:
   application_name: Habr
+  layouts:
+    shared:
+      nav:
+        add_post: Add post
+  web:
+    posts:
+      create:
+        success: Post was successfully created.
+      show:
+        all: All posts
+      new:
+        title: New post
+      index:
+        title: Collective blog

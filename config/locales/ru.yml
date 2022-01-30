@@ -1,2 +1,16 @@
 ru:
   application_name: Habr
+  layouts:
+    shared:
+      nav:
+        add_post: Добавить статью
+  web:
+    posts:
+      create:
+        success: Статья был успешно создана.
+      show:
+        all: Все статьи
+      new:
+        title: Новая статья
+      index:
+        title: Коллективный блог
