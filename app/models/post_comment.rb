@@ -1,5 +1,3 @@
-class Comment < ApplicationRecord
-  has_ancestry
-
+class PostComment < ApplicationRecord
   belongs_to :post
 end
