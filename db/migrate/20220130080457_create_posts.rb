@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
     create_table :posts do |t|
       t.string :title
       t.text :text
-      t.integer :category_id
+      t.references :category, foreign_key: { to_table: :post_categories }
 
       t.timestamps
     end
