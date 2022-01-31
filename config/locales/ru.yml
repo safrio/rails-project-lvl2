@@ -14,3 +14,6 @@ ru:
         title: Новая статья
       index:
         title: Коллективный блог
+      comments:
+        create:
+          success: Статья был успешно создана.

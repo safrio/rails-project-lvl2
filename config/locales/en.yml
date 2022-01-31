@@ -14,3 +14,6 @@ en:
         title: New post
       index:
         title: Collective blog
+      comments:
+        create:
+          success: Post was successfully created.

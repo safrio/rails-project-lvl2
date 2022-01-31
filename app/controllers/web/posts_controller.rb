@@ -11,7 +11,8 @@ module Web
     end
 
     def show
-      @post = Post.find(params[:id])
+      @comment = PostComment.new
+      @post = Post.includes(:creator, :comments).find(params[:id])
     end
 
     def create
