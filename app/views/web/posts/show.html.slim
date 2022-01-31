@@ -14,7 +14,7 @@ p = @post.text
     = f.submit class: 'btn btn-primary'
 
 - if @post.comments.present?
-  - @post.comments.each_with_index do |comment, i|
+  - @post.comments.each_with_index do |comment|
     .card.mt-3
       .card-header = comment.post.creator.email
       .card-body.card-text = comment.content
