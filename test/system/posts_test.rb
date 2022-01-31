@@ -14,7 +14,7 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on 'New Post'
 
-    fill_in 'Category', with: @post.category_id
+    fill_in 'Category', with: @post.category
     fill_in 'Text', with: @post.text
     fill_in 'Title', with: @post.title
     click_on 'Create Post'
@@ -27,7 +27,7 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on 'Edit', match: :first
 
-    fill_in 'Category', with: @post.category_id
+    fill_in 'Category', with: @post.category
     fill_in 'Text', with: @post.text
     fill_in 'Title', with: @post.title
     click_on 'Update Post'
