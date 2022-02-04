@@ -3,6 +3,6 @@ class Post < ApplicationRecord
   validates :text, length: { minimum: 50 }
 
   belongs_to :creator, class_name: 'User'
-  belongs_to :category, class_name: 'Post::Category'
-  has_many :comments, dependent: :destroy, class_name: 'PostComment'
+  belongs_to :category, class_name: 'PostCategory'
+  has_many :comments, inverse_of: :post, class_name: 'PostComment'
 end
