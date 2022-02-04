@@ -8,5 +8,5 @@
 require 'faker'
 
 10.times do
-  Post::Category.create(name: Faker::IndustrySegments.sector)
+  PostCategory.create(name: Faker::IndustrySegments.sector)
 end
