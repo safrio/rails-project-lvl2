@@ -3,7 +3,11 @@
 one:
   content: MyText
   post: one
+  creator: one
+  ancestry: 1
 
 two:
   content: MyText
   post: two
+  creator: two
+  ancestry: 2

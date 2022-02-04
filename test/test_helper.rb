@@ -10,6 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  set_fixture_class 'post/comments': PostComment
 end
 
 class ActionDispatch::IntegrationTest

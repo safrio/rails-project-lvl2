@@ -16,4 +16,7 @@ en:
         title: Collective blog
       comments:
         create:
-          success: Post was successfully created.
+          success: Comment was successfully created.
+          error: Error creating comment.
+      comment_form:
+        submit: Create comment
