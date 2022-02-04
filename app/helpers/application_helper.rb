@@ -16,4 +16,19 @@ module ApplicationHelper
       'active'
     end
   end
+
+  def shift_comment(comment, depth)
+    return comment if depth <= 0
+
+    shift_comment(content_tag(:ul, comment), depth - 1)
+  end
+
+  def render_comments(comments)
+    comments.each do |parent, children|
+      comment = render(partial: 'web/posts/comment_form', locals: { comment: parent })
+      concat(shift_comment(comment, parent.depth))
+
+      render_comments(children) if children.present?
+    end
+  end
 end
