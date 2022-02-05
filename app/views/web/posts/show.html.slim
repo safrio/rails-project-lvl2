@@ -10,7 +10,7 @@ p = @post.text
     span.me-2 = @post.creator.email
     span = @post.created_at
   .likes-section
-    = @post.like.count
+    span.me-2 = @post.like&.count || 0
     = link_to post_likes_path(@post), method: :post
       - if @post.like.count.present?
         i.bi.bi-hand-thumbs-up-fill
