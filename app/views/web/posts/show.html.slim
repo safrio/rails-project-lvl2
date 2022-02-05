@@ -8,7 +8,7 @@ p = @post.text
 .d-flex.justify-content-between.mb-3.mt-1
   .post-section
     span.me-2 = @post.creator.email
-    span = @post.created_at
+    span = time_ago_in_words @post.created_at
   .likes-section
     span.me-2 = @post.like&.count || 0
     = link_to post_likes_path(@post), method: :post
