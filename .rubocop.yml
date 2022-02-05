@@ -6,13 +6,17 @@ require:
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.0.2
   Exclude:
     - 'bin/**'
     - 'db/schema.rb'
     - 'db/migrate/**'
     - 'vendor/**/*'
     - 'node_modules/**/*'
+    - 'code/tmp/**/*'
+  SuggestExtensions: false
+
+Rails:
+  Enabled: true
 
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -38,5 +42,5 @@ Metrics/BlockLength:
 Style/AsciiComments:
   Enabled: false
 
-Style/FrozenStringLiteralComment:
+Metrics/ParameterLists:
   Enabled: false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def nav_menu_item(name, path = '#', options = {})
     assembled_options = options.merge(class: "nav-link link-dark #{active?(path)}")

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   module Posts
     class LikesController < ApplicationController

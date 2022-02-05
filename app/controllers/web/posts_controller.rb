@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Web
   class PostsController < ApplicationController
     before_action :authenticate_user!, only: %w[new create]
