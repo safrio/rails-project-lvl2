@@ -4,3 +4,11 @@ h1 = t('.title')
   .card.mb-3
     .card-header = link_to post.title, post
     .card-body.card-text = post.text.truncate_words(18)
+    .card-footer
+      span.me-2
+        = t('.likes')
+        = post.like&.count || 0
+      span.me-2
+        = time_ago_in_words post.created_at
+      span.me-2
+        = post.creator.email
