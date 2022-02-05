@@ -1,13 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   content: MyText
   post: one
-  creator: one
+  user: one
   ancestry: 1
 
 two:
+  id: 2
   content: MyText
   post: two
-  creator: two
+  user: two
   ancestry: 2

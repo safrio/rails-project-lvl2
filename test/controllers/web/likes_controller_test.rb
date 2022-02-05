@@ -5,22 +5,27 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     @post = posts(:one)
   end
 
-  test 'should not add like' do
-    assert_no_difference '@post.like.count' do
+  test 'should redirect to login page' do
+    user = users(:one)
+    sign_out user
+    assert_no_difference 'PostLike.count' do
       post post_likes_url(@post)
-      @post.reload
     end
     assert_redirected_to new_user_session_url
   end
 
-  test 'should add like' do
+  test 'should toggle like' do
     user = users(:one)
     sign_in(user)
 
-    assert_difference '@post.like.count' do
+    assert_difference 'PostLike.count', -1 do
       post post_likes_url(@post)
-      @post.reload
     end
+
+    assert_difference 'PostLike.count', 1 do
+      post post_likes_url(@post)
+    end
+
     assert_redirected_to @post
   end
 end

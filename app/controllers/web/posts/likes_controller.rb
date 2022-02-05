@@ -4,10 +4,16 @@ module Web
   module Posts
     class LikesController < ApplicationController
       def create
-        like = PostLike.find_or_create_by(post_id: params[:post_id])
-        like.increment(:count).save!
+        like = PostLike.find_by(like_params)
+        like.present? ? like.delete : PostLike.create(like_params)
 
-        redirect_to like.post
+        redirect_to post_path(params[:post_id])
+      end
+
+      private
+
+      def like_params
+        { post_id: params[:post_id], user: current_user }
       end
     end
   end

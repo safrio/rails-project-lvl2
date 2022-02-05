@@ -5,7 +5,7 @@ module Web
     class CommentsController < ApplicationController
       def create
         @post = Post.find(params[:post_id])
-        comment = PostComment.new(comment_params.merge(creator: current_user,
+        comment = PostComment.new(comment_params.merge(user: current_user,
                                                        post: @post,
                                                        parent_id: comment_params[:parent_id]))
 

@@ -3,11 +3,11 @@ h1 = t('.title')
 - @posts.each do |post|
   .card.mb-3
     .card-header = link_to post.title, post
-    .card-body.card-text = post.text.truncate_words(18)
+    .card-body.card-text = post.body.truncate_words(18)
     .card-footer
       span.me-2
         = t('.likes')
-        = post.like&.count || 0
+        = post.likes&.count || 0
       span.me-2
         = time_ago_in_words post.created_at
       span.me-2

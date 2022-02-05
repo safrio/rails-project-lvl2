@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  validates :title, :text, presence: true
-  validates :text, length: { minimum: 50 }
+  validates :title, :body, presence: true
+  validates :body, length: { minimum: 50 }
 
   belongs_to :creator, class_name: 'User'
-  belongs_to :category, class_name: 'PostCategory'
+  belongs_to :post_category
   has_many :comments, inverse_of: :post, dependent: :destroy, class_name: 'PostComment'
-  has_one :like, dependent: :destroy, class_name: 'PostLike'
+  has_many :likes, dependent: :destroy, class_name: 'PostLike'
 end

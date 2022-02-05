@@ -3,6 +3,6 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   = f.input :title
-  = f.input :text
-  = f.association :category
+  = f.input :body
+  = f.association :post_category
   = f.button :submit, class: 'btn btn-success mt-4 btn-block'

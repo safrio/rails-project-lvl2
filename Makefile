@@ -10,7 +10,7 @@ test:
 lint: lint-code
 
 lint-code:
-	bundle exec rubocop
+	bundle exec rubocop app
 	bundle exec slim-lint app/views/
 
 ci-setup:

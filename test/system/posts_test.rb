@@ -7,7 +7,7 @@ class PostsTest < ApplicationSystemTestCase
 
   test 'visiting the index' do
     visit posts_url
-    assert_selector 'h1', text: 'Posts'
+    assert_selector 'h1', body: 'Posts'
   end
 
   test 'creating a Post' do
@@ -15,7 +15,7 @@ class PostsTest < ApplicationSystemTestCase
     click_on 'New Post'
 
     fill_in 'Category', with: @post.category
-    fill_in 'Text', with: @post.text
+    fill_in 'Text', with: @post.body
     fill_in 'Title', with: @post.title
     click_on 'Create Post'
 
