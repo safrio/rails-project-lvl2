@@ -5,6 +5,18 @@ p
 h1 = @post.title
 p = @post.text
 
+.d-flex.justify-content-between.mb-3.mt-1
+  .post-section
+    span.me-2 = @post.creator.email
+    span = @post.created_at
+  .likes-section
+    = @post.like.count
+    = link_to post_likes_path(@post), method: :post
+      - if @post.like.count.present?
+        i.bi.bi-hand-thumbs-up-fill
+      - else
+        i.bi.bi-hand-thumbs-up
+
 - if user_signed_in?
   = simple_form_for @new_comment, url: post_comments_path(@post) do |f|
     = f.error_notification
@@ -15,5 +27,3 @@ p = @post.text
 
 - if @comments.present?
   - render_comments @comments
-  / - @comments.each_pair do |parent, childs|
-  /   = render partial: 'comment_form', locals: { comment: parent }
