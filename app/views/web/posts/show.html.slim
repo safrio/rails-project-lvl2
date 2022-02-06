@@ -11,7 +11,7 @@ p = @post.body
     span = time_ago_in_words @post.created_at
   .likes-section
     span.me-2 = @post.likes_count
-    - if @post.likes_count.positive?
+    - if @like.present?
       = link_to post_like_path(@post, @like), method: :delete
         i.bi.bi-hand-thumbs-up-fill
     - else
