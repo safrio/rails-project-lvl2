@@ -15,6 +15,7 @@ module Web
     def show
       @new_comment = PostComment.new
       @comments = PostComment.includes(:user).where(post_id: params[:id]).arrange
+      @like = PostLike.find_by(post_id: params[:id], user: current_user)
       @post = Post.includes(:creator).find(params[:id])
     end
 

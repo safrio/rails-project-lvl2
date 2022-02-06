@@ -12,7 +12,7 @@ p = @post.body
   .likes-section
     span.me-2 = @post.likes_count
     - if @post.likes_count.positive?
-      = link_to post_like_path(@post, @post.user_like), method: :delete
+      = link_to post_like_path(@post, @like), method: :delete
         i.bi.bi-hand-thumbs-up-fill
     - else
       = link_to post_likes_path(@post), method: :post
