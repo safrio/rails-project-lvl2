@@ -15,7 +15,6 @@ module Web
     def show
       @new_comment = PostComment.new
       @comments = PostComment.includes(:user).where(post_id: params[:id]).arrange
-      @likes_count = PostLike.where(post_id: params[:id]).count
       @post = Post.includes(:creator).find(params[:id])
     end
 

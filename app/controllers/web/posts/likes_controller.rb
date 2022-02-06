@@ -4,8 +4,13 @@ module Web
   module Posts
     class LikesController < ApplicationController
       def create
-        like = PostLike.find_by(like_params)
-        like.present? ? like.delete : PostLike.create(like_params)
+        PostLike.create(like_params)
+
+        redirect_to post_path(params[:post_id])
+      end
+
+      def destroy
+        PostLike.find_by(like_params).delete
 
         redirect_to post_path(params[:post_id])
       end

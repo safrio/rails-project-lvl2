@@ -18,12 +18,14 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     user = users(:one)
     sign_in(user)
 
-    assert_difference 'PostLike.count', -1 do
+    assert_difference 'PostLike.count', 1 do
       post post_likes_url(@post)
     end
 
-    assert_difference 'PostLike.count', 1 do
-      post post_likes_url(@post)
+    post_like = PostLike.last
+
+    assert_difference 'PostLike.count', -1 do
+      delete post_like_url(@post, post_like)
     end
 
     assert_redirected_to @post

@@ -10,11 +10,12 @@ p = @post.body
     span.me-2 = @post.creator.email
     span = time_ago_in_words @post.created_at
   .likes-section
-    span.me-2 = @likes_count
-    = link_to post_likes_path(@post), method: :post
-      - if @likes_count.present?
+    span.me-2 = @post.likes_count
+    - if @post.likes_count.positive?
+      = link_to post_like_path(@post, @post.user_like), method: :delete
         i.bi.bi-hand-thumbs-up-fill
-      - else
+    - else
+      = link_to post_likes_path(@post), method: :post
         i.bi.bi-hand-thumbs-up
 
 - if user_signed_in?
