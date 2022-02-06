@@ -5,7 +5,7 @@ module Web
     before_action :authenticate_user!, only: %w[new create]
 
     def index
-      @posts = Post.includes(:creator, :likes).order(id: :desc)
+      @posts = Post.includes(:creator, :likes).order(id: :desc).page params[:page]
     end
 
     def new

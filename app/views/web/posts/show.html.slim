@@ -3,7 +3,7 @@ p
   = ' / '
   = @post.post_category
 h1 = @post.title
-p = @post.body
+p = simple_format @post.body
 
 .d-flex.justify-content-between.mb-3.mt-1
   .post-section
