@@ -9,7 +9,8 @@ module Web
                                                        post: @post,
                                                        parent_id: comment_params[:parent_id]))
 
-        redirect_to @post, comment.save ? { notice: t('.success') } : { alert: t('.error') }
+        notice = comment.save ? { notice: t('.success') } : { alert: t('.error', msg: comment.errors.first.full_message) }
+        redirect_to @post, notice
       end
 
       private

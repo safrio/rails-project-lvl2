@@ -11,7 +11,7 @@ ru:
         body: Содержание
         post_category: Категория
       post_comment:
-        body: Комментарий
+        content: комментарий
       user:
         email: E-mail
         password: Пароль
@@ -28,6 +28,10 @@ ru:
               blank: не может быть пустым
             post_category:
               required: обязательна для заполнения
+        post_comment:
+          attributes:
+            content:
+              blank: не может быть пустым
         user:
           attributes:
             email:
