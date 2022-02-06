@@ -1,5 +1,7 @@
 .card.mt-3
-  .card-header = @post.creator.email
+  .card-header
+    = comment.user.email
+    span.m-2 = time_ago_in_words comment.created_at
   .card-body.card-text = comment.content
   .card-footer
     = simple_form_for @new_comment, url: post_comments_path(@post) do |f|
