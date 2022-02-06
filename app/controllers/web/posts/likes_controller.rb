@@ -6,7 +6,7 @@ module Web
       before_action :post_by_params
 
       def create
-        PostLike.create(like_params) unless post_by_params.present?
+        PostLike.create(like_params) if post_by_params.blank?
 
         redirect_to post_path(params[:post_id])
       end
