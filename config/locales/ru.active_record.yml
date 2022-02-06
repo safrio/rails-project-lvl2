@@ -1,0 +1,39 @@
+ru:
+  activerecord:
+    models:
+      post: Статья
+      post_comment: Комментарий
+      post_category: Категория
+      user: Пользователь
+    attributes:
+      post:
+        title: Название
+        body: Содержание
+        post_category: Категория
+      post_comment:
+        body: Комментарий
+      user:
+        email: E-mail
+        password: Пароль
+        password_confirmation: Пароль еще раз
+        remember_me: Запомнить меня
+    errors:
+      models:
+        post:
+          attributes:
+            body:
+              blank: не может быть пустым
+              too_short: должно быть не менее 50 символов
+            title:
+              blank: не может быть пустым
+            post_category:
+              required: обязательна для заполнения
+        user:
+          attributes:
+            email:
+              blank: не может быть пустым
+            password:
+              blank: не может быть пустым
+              too_short: слишком короткий
+            password_confirmation:
+              confirmation: отличается

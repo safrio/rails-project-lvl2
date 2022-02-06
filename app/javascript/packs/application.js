@@ -17,3 +17,6 @@ require('@rails/ujs').start()
 // Turbolinks.start()
 // ActiveStorage.start()
 require('bootstrap')
+
+const images = require.context('../../assets/images', true);
+

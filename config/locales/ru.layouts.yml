@@ -1,0 +1,9 @@
+ru:
+  layouts:
+    shared:
+      nav:
+        add_post: Добавить статью
+        application_name: Habr
+        sign_in: Войти
+        sign_out: Выйти
+        register: Регистрация

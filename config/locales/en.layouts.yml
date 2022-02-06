@@ -1,0 +1,9 @@
+en:
+  layouts:
+    shared:
+      nav:
+        add_post: Add article
+        application_name: Habr
+        sign_in: Sign in
+        sign_out: Sign out
+        register: Register

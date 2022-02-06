@@ -1,0 +1,26 @@
+en:
+  activerecord:
+    models:
+      post: Article
+      post_comment: Comment
+      post_category: Category
+    attributes:
+      post:
+        title: Title
+        body: Body
+        post_category: Category
+      post_comment:
+        body: Comment
+      user:
+        email: E-mail
+    errors:
+      models:
+        post:
+          attributes:
+            body:
+              blank: can't be blank
+              too_short: can't be shorter than 50 characters
+            title:
+              blank: can't be blank
+            post_category:
+              required: is required

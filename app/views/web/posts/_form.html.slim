@@ -2,7 +2,7 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  = f.input :title
-  = f.input :body
-  = f.association :post_category
-  = f.button :submit, class: 'btn btn-success mt-4 btn-block'
+  = f.input :title, required: true
+  = f.input :body, required: true, hint: (t('.minimum_length', count: @minimum_length) if @minimum_length)
+  = f.association :post_category, required: true
+  = f.button :submit, t('.submit'), class: 'btn btn-success mt-4 btn-block'

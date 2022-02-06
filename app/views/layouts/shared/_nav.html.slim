@@ -1,6 +1,6 @@
 .container
   header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
-    a.d-flex.align-items-center.mb-2.mb-md-0.me-5.text-dark.text-decoration-none.fs-4(href="/") = t('application_name')
+    a.d-flex.align-items-center.mb-2.mb-md-0.me-5.text-dark.text-decoration-none.fs-4(href="/") = t('.application_name')
     ul.nav.nav-pills
       - if user_signed_in?
         = nav_menu_item t('.add_post'), new_post_path
@@ -8,3 +8,8 @@
       - else
         = nav_menu_item t('.sign_in'), new_user_session_path
         = nav_menu_item t('.register'), new_user_registration_path
+
+      li.nav-item.d-flex.align-items-center.m-2
+        - I18n.available_locales.without(I18n.locale).each do |locale|
+          = link_to url_for(locale: locale) do
+            = image_tag asset_pack_path("static/flag-#{locale}.svg"), width: 25

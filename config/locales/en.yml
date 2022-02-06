@@ -1,17 +1,14 @@
 en:
-  application_name: Habr
-  layouts:
-    shared:
-      nav:
-        add_post: Add post
   web:
     posts:
+      form:
+        submit: Create article
       create:
-        success: Post was successfully created.
+        success: Article was successfully created.
       show:
-        all: All posts
+        all: All articles
       new:
-        title: New post
+        title: New article
       index:
         title: Collective blog
         likes: 'Likes: '

@@ -1,11 +1,8 @@
 ru:
-  application_name: Habr
-  layouts:
-    shared:
-      nav:
-        add_post: Добавить статью
   web:
     posts:
+      form:
+        submit: Создать статью
       create:
         success: Статья был успешно создана.
       show:
