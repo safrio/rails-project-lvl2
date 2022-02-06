@@ -3,7 +3,7 @@ h1 = t('.title')
 - @posts.each do |post|
   .card.mb-3
     .card-header = link_to post.title, post
-    .card-body.card-text = post.body.html_safe.truncate_words(18)
+    .card-body.card-text = post.body.truncate_words(18)
     .card-footer
       span.me-2
         = t('.likes')
