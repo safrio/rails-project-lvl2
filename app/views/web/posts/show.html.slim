@@ -22,4 +22,4 @@ p = simple_format @post.body
   = render 'comment_form', post: @post, comment: @new_comment, parent_id: nil
 
 - if @comments.present?
-  - render_comments @comments, @post
+  = render 'inner_comments', comments: @comments
