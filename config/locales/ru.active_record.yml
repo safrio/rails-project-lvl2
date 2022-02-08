@@ -36,6 +36,8 @@ ru:
           attributes:
             email:
               blank: не может быть пустым
+              invalid: некорректно заполнено
+              taken: уже существует
             password:
               blank: не может быть пустым
               too_short: слишком короткий

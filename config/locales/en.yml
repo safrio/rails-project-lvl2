@@ -15,6 +15,6 @@ en:
       comments:
         create:
           success: Comment was successfully created.
-          error: Error creating comment.
+          error: "Error: %{msg}"
       comment_form:
         submit: Create comment
