@@ -6,20 +6,20 @@ module Web
       before_action :post_by_params
 
       def create
-        PostLike.create(like_params) if post_by_params.blank?
+        PostLike.create(like_params) if like_by_params.blank?
 
         redirect_to post_path(params[:post_id])
       end
 
       def destroy
-        post_by_params&.delete
+        like_by_params&.delete
 
         redirect_to post_path(params[:post_id])
       end
 
       private
 
-      def post_by_params
+      def like_by_params
         PostLike.find_by(like_params)
       end
 
