@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_060744) do
   create_table "post_comments", force: :cascade do |t|
     t.text "content"
     t.integer "post_id", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_060744) do
   end
 
   add_foreign_key "post_comments", "posts"
+  add_foreign_key "post_comments", "users"
   add_foreign_key "post_likes", "posts"
   add_foreign_key "post_likes", "users"
   add_foreign_key "posts", "users", column: "creator_id"
