@@ -1,0 +1,7 @@
+.card.mt-3
+  .card-header
+    = comment.user.email
+    span.m-2 = time_ago_in_words comment.created_at
+  .card-body.card-text = comment.content
+  .card-footer
+    = render 'comment_form', post: @post, comment: @new_comment, parent_id: comment.id

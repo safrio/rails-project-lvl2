@@ -25,12 +25,12 @@ module ApplicationHelper
     shift_comment(content_tag(:ul, comment), depth - 1)
   end
 
-  def render_comments(comments)
+  def render_comments(comments, post)
     comments.each do |parent, children|
-      comment = render(partial: 'web/posts/comment_form', locals: { comment: parent })
+      comment = render(partial: 'web/posts/inner_comment', locals: { comment: parent, post: post })
       concat(shift_comment(comment, parent.depth))
 
-      render_comments(children) if children.present?
+      render_comments(children, post) if children.present?
     end
   end
 end
