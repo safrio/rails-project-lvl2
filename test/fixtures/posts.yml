@@ -2,14 +2,14 @@
 
 one:
   id: 1
-  title: Post 1
-  body: Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+  title: <%= Faker::Job.title %>
+  body: <%= Faker::Lorem.paragraph_by_chars(number: 50) %>
   post_category: one
   creator: one
 
 two:
   id: 2
-  title: Post 2
-  body: Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2 Text 2
+  title: <%= Faker::Job.title %>
+  body: <%= Faker::Lorem.paragraph_by_chars(number: 50) %>
   post_category: two
   creator: two

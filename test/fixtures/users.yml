@@ -5,9 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  email: email1@localhost
-# column: value
-#
+  email: <%= Faker::Internet.email %>
+
 two:
-  email: email2@localhost
-# column: value
+  email: <%= Faker::Internet.email %>
