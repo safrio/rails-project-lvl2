@@ -3,7 +3,7 @@
 module Web
   module Posts
     class LikesController < ApplicationController
-      before_action :post_by_params
+      before_action :like_by_params
 
       def create
         PostLike.create(like_params) if like_by_params.blank?
