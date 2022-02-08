@@ -20,7 +20,7 @@ module Web
     end
 
     def create
-      @post = Post.new(post_params.merge(creator: current_user))
+      @post = current_user.posts.new(post_params)
 
       if @post.save
         redirect_to root_url, notice: t('.success')
