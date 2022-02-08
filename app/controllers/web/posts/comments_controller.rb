@@ -5,9 +5,7 @@ module Web
     class CommentsController < ApplicationController
       def create
         @post = Post.find(params[:post_id])
-        comment = PostComment.new(comment_params.merge(user: current_user,
-                                                       post: @post,
-                                                       parent_id: comment_params[:parent_id]))
+        comment = @post.comments.new(comment_params.merge(user: current_user))
 
         notice = comment.save ? { notice: t('.success') } : { alert: t('.error', msg: comment.errors.first.full_message) }
         redirect_to @post, notice
