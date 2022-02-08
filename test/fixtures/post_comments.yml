@@ -5,11 +5,9 @@ one:
   content: <%= Faker::Lorem.sentence %>
   post: one
   user: one
-  ancestry: 1
 
 two:
   id: 2
   content: <%= Faker::Lorem.sentence %>
   post: two
   user: two
-  ancestry: 2
