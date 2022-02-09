@@ -10,7 +10,7 @@ p = simple_format @post.body
     span.me-2 = @post.creator.email
     span = time_ago_in_words @post.created_at
   .likes-section
-    span.me-2 = @post.likes.size
+    span.me-2 = @post.likes_count
     - if @like.present?
       = link_to post_like_path(@post, @like), method: :delete
         i.bi.bi-hand-thumbs-up-fill

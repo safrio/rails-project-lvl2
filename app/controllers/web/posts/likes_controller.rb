@@ -12,7 +12,10 @@ module Web
       end
 
       def destroy
-        like_by_params&.delete
+        if like_by_params.present?
+          Post.decrement_counter(:likes_count, params[:post_id])
+          like_by_params&.delete
+        end
 
         redirect_to post_path(params[:post_id])
       end
@@ -20,7 +23,7 @@ module Web
       private
 
       def like_by_params
-        PostLike.find_by(like_params)
+        @like_by_params ||= PostLike.find_by(like_params)
       end
 
       def like_params
