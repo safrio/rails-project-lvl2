@@ -7,6 +7,8 @@ en:
         success: Article was successfully created.
       show:
         all: All articles
+        you_not_authorized_html: You are not authorized to leave comments - %{href}
+        sign_in: please login
       new:
         title: New article
       index:
@@ -17,4 +19,5 @@ en:
           success: Comment was successfully created.
           error: "Error: %{msg}"
       comment_form:
-        submit: Create comment
+        submit: Answer
+        answer: Answer

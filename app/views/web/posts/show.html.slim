@@ -17,9 +17,10 @@ p = simple_format @post.body
     - else
       = link_to post_likes_path(@post), method: :post
         i.bi.bi-hand-thumbs-up
-
 - if user_signed_in?
   = render 'comment_form', post: @post, comment: @new_comment, parent_id: nil
+- else
+  = t('.you_not_authorized_html', href: link_to(t('.sign_in'), new_user_session_url))
 
 - if @comments.present?
   = render 'inner_comments', comments: @comments

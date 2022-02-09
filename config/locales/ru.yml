@@ -7,6 +7,8 @@ ru:
         success: Статья был успешно создана.
       show:
         all: Все статьи
+        you_not_authorized_html: Пожалуйста, %{href}, чтобы оставить комментарий
+        sign_in: войдите
       new:
         title: Новая статья
       index:
@@ -17,4 +19,5 @@ ru:
           success: Комментарий был успешно создан.
           error: "Ошибка: %{msg}"
       comment_form:
-        submit: Создать комментарий
+        submit: Ответить
+        answer: Ответить

@@ -5,6 +5,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+
 const $ = require('jquery')
 // @ts-ignore
 window.jQuery = $
@@ -18,5 +19,5 @@ require('@rails/ujs').start()
 // ActiveStorage.start()
 require('bootstrap')
 
-const images = require.context('../../assets/images', true);
+require.context('../../assets/images', true);
 
