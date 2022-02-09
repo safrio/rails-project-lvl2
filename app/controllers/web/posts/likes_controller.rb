@@ -13,7 +13,9 @@ module Web
 
       def destroy
         if like_by_params.present?
+          # rubocop:disable Rails::SkipsModelValidations
           Post.decrement_counter(:likes_count, params[:post_id])
+          # rubocop:enable Rails::SkipsModelValidations
           like_by_params&.delete
         end
 
