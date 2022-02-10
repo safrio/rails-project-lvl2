@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(version: 2022_02_08_065550) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "post_category_id"
+    t.integer "post_category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "creator_id"
+    t.integer "creator_id", null: false
     t.integer "likes_count"
     t.index ["creator_id"], name: "index_posts_on_creator_id"
     t.index ["post_category_id"], name: "index_posts_on_post_category_id"
@@ -67,5 +67,6 @@ ActiveRecord::Schema.define(version: 2022_02_08_065550) do
   add_foreign_key "post_comments", "users"
   add_foreign_key "post_likes", "posts"
   add_foreign_key "post_likes", "users"
+  add_foreign_key "posts", "post_categories"
   add_foreign_key "posts", "users", column: "creator_id"
 end
