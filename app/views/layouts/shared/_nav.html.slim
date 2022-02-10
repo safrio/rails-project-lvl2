@@ -11,5 +11,5 @@
 
       li.nav-item.d-flex.align-items-center.m-2
         - I18n.available_locales.without(I18n.locale).each do |locale|
-          = link_to url_for(locale: locale, controller: 'web/posts', action: 'index') do
+          = link_to url_for(locale: locale) do
             = image_tag asset_pack_path("static/flag-#{locale}.svg"), width: 25
