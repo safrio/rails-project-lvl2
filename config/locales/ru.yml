@@ -17,6 +17,6 @@ ru:
       comments:
         create:
           success: Комментарий был успешно создан.
-      comment_form:
-        submit: Ответить
-        answer: Ответить
+        comment_form:
+          submit: Ответить
+          answer: Ответить

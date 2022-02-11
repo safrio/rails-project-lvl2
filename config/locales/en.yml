@@ -17,6 +17,6 @@ en:
       comments:
         create:
           success: Comment was successfully created.
-      comment_form:
-        submit: Answer
-        answer: Answer
+        comment_form:
+          submit: Answer
+          answer: Answer

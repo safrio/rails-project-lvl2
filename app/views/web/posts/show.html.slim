@@ -10,7 +10,7 @@ p = simple_format @post.body
     span.me-2 = @post.creator.email
     span = time_ago_in_words @post.created_at
   .likes-section
-    span.me-2 = @post.likes.size
+    span.me-2 = @post.likes_count
     - if @like.present?
       = link_to post_like_path(@post, @like), method: :delete
         i.bi.bi-hand-thumbs-up-fill
@@ -18,9 +18,9 @@ p = simple_format @post.body
       = link_to post_likes_path(@post), method: :post
         i.bi.bi-hand-thumbs-up
 - if user_signed_in?
-  = render 'comment_form', post: @post, comment: @new_comment, parent_id: nil
+  = render 'web/posts/comments/comment_form', post: @post, comment: @new_comment, parent_id: nil
 - else
   = t('.you_not_authorized_html', href: link_to(t('.sign_in'), new_user_session_url))
 
 - if @comments.present?
-  = render 'inner_comments', comments: @comments
+  = render 'web/posts/comments/inner_comments', comments: @comments

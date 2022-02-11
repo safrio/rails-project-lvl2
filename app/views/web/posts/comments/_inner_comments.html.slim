@@ -6,7 +6,7 @@
     .card-body.card-text = comment.content
     .card-footer
       - if user_signed_in?
-        = render 'comment_form', post: @post, comment: @new_comment, parent_id: comment.id
+        = render 'web/posts/comments/comment_form', post: @post, comment: @new_comment, parent_id: comment.id
 
       - if children.present?
-        = render partial: 'inner_comments', locals: { comments: children }
+        = render partial: 'web/posts/comments/inner_comments', locals: { comments: children }
