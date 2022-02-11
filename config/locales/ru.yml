@@ -17,7 +17,6 @@ ru:
       comments:
         create:
           success: Комментарий был успешно создан.
-          error: "Ошибка: %{msg}"
       comment_form:
         submit: Ответить
         answer: Ответить

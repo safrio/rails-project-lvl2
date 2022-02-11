@@ -7,7 +7,7 @@ module Web
         @post = Post.find(params[:post_id])
         comment = @post.comments.new(comment_params.merge(user: current_user))
 
-        notice = comment.save ? { notice: t('.success') } : { alert: t('.error', msg: comment.errors.first.full_message) }
+        notice = comment.save ? { notice: t('.success') } : { alert: comment.errors.full_messages.join(', ').capitalize }
         redirect_to @post, notice
       end
 
