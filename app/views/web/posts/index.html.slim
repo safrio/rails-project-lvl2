@@ -7,7 +7,7 @@ h1 = t('.title')
     .card-footer
       span.me-2
         = t('.likes')
-        = post.likes_count
+        = post.likes.size
       span.me-2
         = time_ago_in_words post.created_at
       span.me-2
