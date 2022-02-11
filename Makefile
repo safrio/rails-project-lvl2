@@ -1,5 +1,11 @@
 setup:
 	bin/setup
+	yarn install
+	bundle install
+	bin/rails db:prepare db:migrate assets:precompile
+
+fixtures-load:
+	bin/rails db:fixtures:load
 
 start:
 	bin/rails s -p 3000 -b "0.0.0.0"

@@ -8,9 +8,12 @@
 
 ## Установка
 
-- `git clone REPO_NAME`
-- `bundle install`
-- `yarn install`
+```sh
+make setup
+make test # run tests
+make start # run server http://localhost:3000
+
+make fixtures-load # sometimes, when fixtures were changed
 
 ## Запуск
 
