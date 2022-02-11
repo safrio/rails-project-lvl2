@@ -14,10 +14,11 @@ make test # run tests
 make start # run server http://localhost:3000
 
 make fixtures-load # sometimes, when fixtures were changed
+```
 
 ## Запуск
 
-`bundle exec rails server`
+`rails server`
 
 ### Пример
 
