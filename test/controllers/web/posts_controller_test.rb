@@ -33,11 +33,8 @@ class Web::PostsControllerTest < ActionDispatch::IntegrationTest
       post posts_url, params: { post: @post.attributes }
     end
 
-    last_post = Post.last
-    assert_equal last_post.title, @post.title
-    assert_equal last_post.body, @post.body
-    assert_equal last_post.post_category, @post.post_category
-    assert_equal last_post.creator, @post.creator
+    assert { Post.find_by! @post.attributes }
+
     assert_redirected_to root_url
   end
 

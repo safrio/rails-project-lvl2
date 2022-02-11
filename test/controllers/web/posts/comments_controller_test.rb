@@ -24,10 +24,8 @@ class Web::Posts::CommentsControllerTest < ActionDispatch::IntegrationTest
       post post_comments_url(@post), params: { post_comment: @post_comment.attributes }
     end
 
-    last_comm = PostComment.last
-    assert_equal last_comm.content, @post_comment.content
-    assert_equal last_comm.post, @post
-    assert_equal last_comm.user, @post_comment.user
+    assert { PostComment.find_by! @post_comment.attributes }
+
     assert_redirected_to @post
   end
 end
