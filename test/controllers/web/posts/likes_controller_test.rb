@@ -10,9 +10,10 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
   test 'should redirect to login page' do
     user = users(:one)
     sign_out user
-    assert_no_difference 'PostLike.count' do
-      post post_likes_url(@post)
-    end
+
+    post post_likes_url(@post)
+
+    assert { !PostLike.find_by(post: @post, user: user) }
     assert_redirected_to new_user_session_url
   end
 
@@ -20,16 +21,14 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     user = users(:one)
     sign_in(user)
 
-    assert_difference 'PostLike.count', 1 do
-      post post_likes_url(@post)
-    end
+    post post_likes_url(@post)
+    assert { PostLike.find_by!(post: @post, user: user) }
 
-    post_like = PostLike.last
+    post_like = PostLike.find_by(post: @post, user: user)
 
-    assert_difference 'PostLike.count', -1 do
-      delete post_like_url(@post, post_like)
-    end
+    delete post_like_url(@post, post_like)
 
+    assert { !PostLike.find_by(post: @post, user: user) }
     assert_redirected_to @post
   end
 end

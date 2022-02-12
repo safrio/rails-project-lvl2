@@ -4,7 +4,11 @@ require 'test_helper'
 
 class Web::PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = posts(:one)
+    @post = {
+      title: Faker::Job.title,
+      body: Faker::Lorem.paragraph_by_chars(number: 150),
+      post_category_id: post_categories(:one).id
+    }
   end
 
   test 'should get index' do
@@ -29,17 +33,14 @@ class Web::PostsControllerTest < ActionDispatch::IntegrationTest
     user = users(:one)
     sign_in(user)
 
-    assert_difference('Post.count') do
-      post posts_url, params: { post: @post.attributes }
-    end
+    post posts_url, params: { post: @post }
 
-    assert { Post.find_by! @post.attributes }
-
+    assert { Post.find_by! @post.merge(creator: user) }
     assert_redirected_to root_url
   end
 
   test 'should show post' do
-    get post_url(@post)
+    get post_url(posts(:one))
     assert_response :success
   end
 end
