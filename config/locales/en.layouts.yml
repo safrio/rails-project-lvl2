@@ -1,6 +1,8 @@
 en:
   layouts:
     shared:
+      head:
+        title: Habr
       nav:
         add_post: Add article
         application_name: Habr

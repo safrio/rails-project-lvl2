@@ -1,6 +1,8 @@
 ru:
   layouts:
     shared:
+      head:
+        title: Habr
       nav:
         add_post: Добавить статью
         application_name: Habr
