@@ -4,7 +4,7 @@ require 'test_helper'
 
 class Web::PostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @post = {
+    @post_attrs = {
       title: Faker::Job.title,
       body: Faker::Lorem.paragraph_by_chars(number: 150),
       post_category_id: post_categories(:one).id
@@ -33,9 +33,9 @@ class Web::PostsControllerTest < ActionDispatch::IntegrationTest
     user = users(:one)
     sign_in(user)
 
-    post posts_url, params: { post: @post }
+    post posts_url, params: { post: @post_attrs }
 
-    assert { Post.find_by! @post.merge(creator: user) }
+    assert { Post.find_by! @post_attrs.merge(creator: user) }
     assert_redirected_to root_url
   end
 
