@@ -1,8 +1,6 @@
 setup:
 	bin/setup
-	yarn install
-	bundle install
-	bin/rails db:prepare db:migrate assets:precompile
+	bin/rails assets:precompile
 
 fixtures-load:
 	bin/rails db:fixtures:load
@@ -22,6 +20,6 @@ lint-code:
 ci-setup:
 	yarn install
 	bundle install --without production development
-	RAILS_ENV=test bin/rails db:prepare db:migrate assets:precompile
+	RAILS_ENV=test bin/rails db:prepare assets:precompile
 
 .PHONY: test
